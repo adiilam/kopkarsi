@@ -1,9 +1,10 @@
-// import 'dart:js';
-
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/pages/splash_page.dart';
 import 'package:kopkarsi/pages/sign_in_page.dart';
 import 'package:kopkarsi/pages/sign_up_page.dart';
-import 'package:kopkarsi/pages/splash_page.dart';
+import 'package:kopkarsi/pages/home/main_page.dart';
+// import 'dart:js';
+
 // import 'package:google_fonts/google_fonts.dart';
 // import 'theme.dart';
 
@@ -15,11 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const SplashPage(),
         '/sign-in': (context) => const SignInPage(),
         '/sign-up': (context) => const SignUpPage(),
+        '/home': (context) => const MainPage(),
       },
       // home: SplashPage(),
     );

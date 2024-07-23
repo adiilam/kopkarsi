@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 double defaultMargin = 20.0;
 
 Color primaryColor = const Color(0xff3D8F7D);
+Color iconColor = const Color(0xff38ABBE);
 Color secondaryColor = const Color(0xffFF0C0C);
 Color titleColor = const Color(0xff222522);
 Color subtitleColor = const Color(0xff565656);

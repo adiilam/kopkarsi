@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:kopkarsi/theme.dart';
+import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -303,7 +303,7 @@ class SignUpPage extends StatelessWidget {
                 )),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/sign-in');
+                Navigator.pushNamed(context, '/home');
               },
               child: Text(
                 'Registrasi',
@@ -323,7 +323,7 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'don\'t have any account? ',
+              'Sudah memiliki akun? ',
               style: subtitleTextStyle.copyWith(
                 fontSize: 12,
               ),
