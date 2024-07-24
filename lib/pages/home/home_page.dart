@@ -1,5 +1,7 @@
+// import 'package:flutter/widgets.dart';
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/widgets/wallet_card.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter/cupertino.dart';
@@ -74,7 +76,9 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 10.0),
+                const SizedBox(
+                  width: 10.0,
+                ),
                 IconButton(
                   icon: const Icon(Icons.shopping_cart, color: Colors.white),
                   onPressed: () {},
@@ -121,10 +125,55 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    return ListView(
-      children: [
-        header(),
-      ],
+    Widget walletUser() {
+      return Container(
+        width: double.infinity,
+        margin: const EdgeInsets.only(top: 35),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(24),
+          ),
+          color: backgroundColor,
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: defaultMargin,
+                    ),
+                    const Row(
+                      children: [
+                        WalletCard(),
+                        WalletCard(),
+                        WalletCard(),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
+    return Scaffold(
+      backgroundColor: primaryColor,
+      body: ListView(
+        children: [
+          header(),
+          walletUser(),
+        ],
+      ),
     );
   }
 }
