@@ -171,7 +171,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         child: Image.asset(
                           'assets/icon_profile.png',
-                          width: 20,
+                          width: 15,
                           color: currentIndex == 3
                               ? primaryColor
                               : const Color(0xff222522),
