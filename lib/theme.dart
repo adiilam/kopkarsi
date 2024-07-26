@@ -11,6 +11,7 @@ Color subtitleColor = const Color(0xff565656);
 Color priceColor = const Color(0xffFF0C0C);
 Color backgroundColor = const Color(0xffFFFFFF);
 Color backgroundColor2 = const Color(0xffECECEC);
+Color backgroundColor3 = const Color(0xffFAFAFA);
 
 TextStyle titleTextStyle = GoogleFonts.inter(
   color: titleColor,

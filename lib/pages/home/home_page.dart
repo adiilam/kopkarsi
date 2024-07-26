@@ -1,7 +1,9 @@
-// import 'package:flutter/widgets.dart';
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/widgets/notif_card.dart';
 import 'package:kopkarsi/widgets/wallet_card.dart';
+import 'package:kopkarsi/widgets/products_card.dart';
+// import 'package:flutter/widgets.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter/cupertino.dart';
@@ -22,8 +24,8 @@ class HomePage extends StatelessWidget {
               children: [
                 const CircleAvatar(
                   backgroundImage: AssetImage(
-                      'assets/image_profil.png' // Ganti dengan URL gambar Anda
-                      ),
+                    'assets/image_profil.png',
+                  ),
                   radius: 20.0,
                 ),
                 const SizedBox(
@@ -125,7 +127,7 @@ class HomePage extends StatelessWidget {
       );
     }
 
-    Widget walletUser() {
+    Widget content() {
       return Container(
         width: double.infinity,
         margin: const EdgeInsets.only(top: 35),
@@ -133,7 +135,7 @@ class HomePage extends StatelessWidget {
           borderRadius: const BorderRadius.vertical(
             top: Radius.circular(24),
           ),
-          color: backgroundColor,
+          color: backgroundColor3,
         ),
         child: Column(
           children: [
@@ -161,6 +163,129 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
+
+            //NOTED: Title Notifications
+            Container(
+              margin: EdgeInsets.only(
+                top: 30,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Informasi  Terbaru',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  Text(
+                    'Lihat Semua',
+                    style: priceTextStyle.copyWith(
+                      fontSize: 12,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //NOTED: Card Notifications
+            Container(
+              margin: const EdgeInsets.only(
+                top: 5,
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: defaultMargin,
+                      right: defaultMargin,
+                    ),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: defaultMargin,
+                          ),
+                          const Row(
+                            children: [
+                              NotificationsCard(),
+                              NotificationsCard(),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  //NOTED: Product Title
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 30,
+                      left: defaultMargin,
+                      right: defaultMargin,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Rekomendasi Produk',
+                          style: titleTextStyle.copyWith(
+                            fontSize: 16,
+                            fontWeight: semiBold,
+                          ),
+                        ),
+                        Text(
+                          'Lihat Semua',
+                          style: priceTextStyle.copyWith(
+                            fontSize: 12,
+                            fontWeight: semiBold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  //NOTED: Card Product
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 5,
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(
+                            top: defaultMargin,
+                            right: defaultMargin,
+                          ),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: defaultMargin,
+                                ),
+                                const Row(
+                                  children: [
+                                    ProductsCard(),
+                                    ProductsCard(),
+                                    ProductsCard(),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       );
@@ -171,7 +296,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           header(),
-          walletUser(),
+          content(),
         ],
       ),
     );
