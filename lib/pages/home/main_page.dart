@@ -1,10 +1,10 @@
-// import 'package:flutter/widgets.dart';
-import 'package:kopkarsi/pages/home/history_page.dart';
-import 'package:kopkarsi/pages/home/home_page.dart';
-import 'package:kopkarsi/pages/home/profile_page.dart';
-import 'package:kopkarsi/pages/home/simjam_page.dart';
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/pages/home/home_page.dart';
+import 'package:kopkarsi/pages/home/simjam_page.dart';
+import 'package:kopkarsi/pages/home/history_page.dart';
+import 'package:kopkarsi/pages/home/profile_page.dart';
+// import 'package:flutter/widgets.dart';
 // import 'package:flutter/theme.dart';
 
 class MainPage extends StatefulWidget {
@@ -92,36 +92,89 @@ class _MainPageState extends State<MainPage> {
                 ),
                 label: '',
               ),
+              // BottomNavigationBarItem(
+              //   icon: Transform.translate(
+              //     offset: const Offset(-15, 5), // Geser ke kiri
+              //     child: Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [
+              //         Container(
+              //           margin: const EdgeInsets.only(
+              //             top: 20,
+              //             bottom: 10,
+              //           ),
+              //           child: Image.asset(
+              //             'assets/icon_simjam.png',
+              //             width: 20,
+              //             color: currentIndex == 1
+              //                 ? iconColor
+              //                 : const Color(0xff222522),
+              //           ),
+              //         ),
+              //         Text(
+              //           'SimJam',
+              //           style: TextStyle(
+              //             fontSize: 12,
+              //             color: currentIndex == 1
+              //                 ? iconColor
+              //                 : const Color(0xff222522),
+              //           ),
+              //         ),
+              //       ],
+              //     ),
+              //   ),
+              //   label: '',
+              // ),
               BottomNavigationBarItem(
-                icon: Transform.translate(
-                  offset: const Offset(-15, 5), // Geser ke kiri
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(
-                          top: 20,
-                          bottom: 10,
-                        ),
-                        child: Image.asset(
-                          'assets/icon_simjam.png',
-                          width: 20,
-                          color: currentIndex == 1
-                              ? iconColor
-                              : const Color(0xff222522),
-                        ),
-                      ),
-                      Text(
-                        'SimJam',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: currentIndex == 1
-                              ? iconColor
-                              : const Color(0xff222522),
-                        ),
-                      ),
-                    ],
-                  ),
+                icon: GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      backgroundColor: Colors.transparent,
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: 120,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              ListTile(
+                                leading: const Icon(Icons.save),
+                                title: const Text('Simpan'),
+                                onTap: () {
+                                  // Action untuk Simpan
+                                  Navigator.pop(context);
+                                },
+                              ),
+                              ListTile(
+                                leading: const Icon(Icons.attach_money),
+                                title: const Text('Pinjam'),
+                                onTap: () {
+                                  // Action untuk Pinjam
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    );
+                    // Text(
+                    //   'SimJam',
+                    //   style: TextStyle(
+                    //     fontSize: 12,
+                    //     color: currentIndex == 1
+                    //         ? iconColor
+                    //         : const Color(0xff222522),
+                    //   ),
+                    // );
+                  },
+                  child: const Icon(Icons.account_balance_wallet),
                 ),
                 label: '',
               ),
