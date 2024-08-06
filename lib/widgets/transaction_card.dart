@@ -15,7 +15,7 @@ class TransactionCard extends StatelessWidget {
         top: defaultMargin,
       ),
       decoration: BoxDecoration(
-        color: backgroundColor2,
+        color: backgroundColor3,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
@@ -26,8 +26,9 @@ class TransactionCard extends StatelessWidget {
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
-            padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-            height: 40,
+            // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+            width: 350,
+            height: 50,
             decoration: BoxDecoration(
               color: backgroundColor2,
               borderRadius: BorderRadius.circular(30),
@@ -40,7 +41,10 @@ class TransactionCard extends StatelessWidget {
                 ),
                 hint: Text(
                   'Jenis Transaksi',
-                  style: subtitleTextStyle,
+                  style: subtitleTextStyle.copyWith(
+                    fontSize: 15,
+                    fontWeight: regular,
+                  ),
                 ),
                 items: [
                   DropdownMenuItem<String>(
@@ -62,6 +66,122 @@ class TransactionCard extends StatelessWidget {
                   // Handle value change
                 },
               ),
+            ),
+          ),
+          //Start Date
+          // // Container(
+          // //   margin: EdgeInsets.only(top: defaultMargin),
+          // //   child: Column(
+          // //     crossAxisAlignment: CrossAxisAlignment.start,
+          // //     children: [
+          // //       Text(
+          // //         'Dari Tanggal',
+          // //         style: subtitleTextStyle.copyWith(
+          // //           fontSize: 14,
+          // //           fontWeight: regular,
+          // //         ),
+          // //       ),
+          // //       const SizedBox(
+          // //         height: 12,
+          // //       ),
+          // //       Container(
+          // //         height: 50,
+          // //         padding: const EdgeInsets.symmetric(
+          // //           horizontal: 16,
+          // //         ),
+          // //         decoration: BoxDecoration(
+          // //           color: backgroundColor2,
+          // //           borderRadius: BorderRadius.circular(12),
+          // //         ),
+          // //         child: Center(
+          // //           child: Row(
+          // //             mainAxisAlignment: MainAxisAlignment.end,
+          // //             children: [
+          // //               Image.asset(
+          // //                 'assets/icon_calendar.png',
+          // //                 width: 17,
+          // //               ),
+          // //             ],
+          // //           ),
+          // //         ),
+          // //       ),
+          //     ],
+          //   ),
+          // ),
+          Container(
+            margin: EdgeInsets.only(top: defaultMargin),
+            // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    color: backgroundColor2,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Dari Tanggal',
+                            hintStyle: subtitleTextStyle.copyWith(
+                              fontSize: 14,
+                              fontWeight: regular,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/icon_calendar.png',
+                        width: 17,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          //End Date
+          Container(
+            margin: EdgeInsets.only(top: defaultMargin),
+            // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 50,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  decoration: BoxDecoration(
+                    color: backgroundColor2,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Sampai Tanggal',
+                            hintStyle: subtitleTextStyle.copyWith(
+                              fontSize: 14,
+                              fontWeight: regular,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        'assets/icon_calendar.png',
+                        width: 17,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
