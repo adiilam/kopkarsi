@@ -176,7 +176,7 @@ class _MainPageState extends State<MainPage> {
                   },
                   child: const Icon(Icons.account_balance_wallet),
                 ),
-                label: '',
+                label: 'SimJam',
               ),
               BottomNavigationBarItem(
                 icon: Transform.translate(
