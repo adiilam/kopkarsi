@@ -9,11 +9,7 @@ class TransactionCard extends StatelessWidget {
     return Container(
       width: 390,
       height: 230,
-      margin: EdgeInsets.only(
-        right: defaultMargin,
-        left: defaultMargin,
-        top: defaultMargin,
-      ),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: backgroundColor3,
         borderRadius: BorderRadius.circular(10),
@@ -51,14 +47,20 @@ class TransactionCard extends StatelessWidget {
                     value: 'SHU',
                     child: Text(
                       'SHU',
-                      style: subtitleTextStyle,
+                      style: subtitleTextStyle.copyWith(
+                        fontSize: 14,
+                        fontWeight: regular,
+                      ),
                     ),
                   ),
                   DropdownMenuItem<String>(
                     value: 'Tabungan',
                     child: Text(
                       'Tabungan',
-                      style: subtitleTextStyle,
+                      style: subtitleTextStyle.copyWith(
+                        fontSize: 14,
+                        fontWeight: regular,
+                      ),
                     ),
                   ),
                 ],
@@ -68,46 +70,8 @@ class TransactionCard extends StatelessWidget {
               ),
             ),
           ),
-          //Start Date
-          // // Container(
-          // //   margin: EdgeInsets.only(top: defaultMargin),
-          // //   child: Column(
-          // //     crossAxisAlignment: CrossAxisAlignment.start,
-          // //     children: [
-          // //       Text(
-          // //         'Dari Tanggal',
-          // //         style: subtitleTextStyle.copyWith(
-          // //           fontSize: 14,
-          // //           fontWeight: regular,
-          // //         ),
-          // //       ),
-          // //       const SizedBox(
-          // //         height: 12,
-          // //       ),
-          // //       Container(
-          // //         height: 50,
-          // //         padding: const EdgeInsets.symmetric(
-          // //           horizontal: 16,
-          // //         ),
-          // //         decoration: BoxDecoration(
-          // //           color: backgroundColor2,
-          // //           borderRadius: BorderRadius.circular(12),
-          // //         ),
-          // //         child: Center(
-          // //           child: Row(
-          // //             mainAxisAlignment: MainAxisAlignment.end,
-          // //             children: [
-          // //               Image.asset(
-          // //                 'assets/icon_calendar.png',
-          // //                 width: 17,
-          // //               ),
-          // //             ],
-          // //           ),
-          // //         ),
-          // //       ),
-          //     ],
-          //   ),
-          // ),
+
+          //START DATE
           Container(
             margin: EdgeInsets.only(top: defaultMargin),
             // padding: EdgeInsets.symmetric(horizontal: defaultMargin),
@@ -146,7 +110,7 @@ class TransactionCard extends StatelessWidget {
             ),
           ),
 
-          //End Date
+          //END DATE
           Container(
             margin: EdgeInsets.only(top: defaultMargin),
             // padding: EdgeInsets.symmetric(horizontal: defaultMargin),

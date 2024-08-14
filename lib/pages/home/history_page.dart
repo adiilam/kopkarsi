@@ -1,5 +1,6 @@
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/widgets/history_card.dart';
 import 'package:kopkarsi/widgets/transaction_card.dart';
 
 class HistoryPage extends StatelessWidget {
@@ -118,12 +119,98 @@ class HistoryPage extends StatelessWidget {
       );
     }
 
+    Widget content() {
+      return Container(
+        margin: EdgeInsets.only(top: defaultMargin),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(24),
+          ),
+          color: backgroundColor3,
+        ),
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.only(
+                top: defaultMargin,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                top: 30,
+                left: defaultMargin,
+                right: defaultMargin,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Riwayat',
+                    style: titleTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  Text(
+                    'Lihat Semua',
+                    style: priceTextStyle.copyWith(
+                      fontSize: 12,
+                      fontWeight: regular,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            //NOTED: HistoryCard
+            Container(
+              margin: const EdgeInsets.only(top: 10),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 10,
+                      right: 10,
+                      left: 10,
+                      bottom: defaultMargin,
+                    ),
+                    child: const SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Row(
+                        children: [
+                          // SizedBox(
+                          //   height: 10,
+                          // ),
+                          Column(
+                            children: [
+                              HistoryCard(),
+                              SizedBox(height: 10),
+                              HistoryCard(),
+                              SizedBox(height: 10),
+                              HistoryCard(),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: primaryColor,
       body: ListView(
         children: [
           header(),
           transaction(),
+          content(),
         ],
       ),
     );
