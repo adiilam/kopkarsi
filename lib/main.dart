@@ -3,6 +3,10 @@ import 'package:kopkarsi/pages/splash_page.dart';
 import 'package:kopkarsi/pages/sign_in_page.dart';
 import 'package:kopkarsi/pages/sign_up_page.dart';
 import 'package:kopkarsi/pages/home/main_page.dart';
+import 'package:kopkarsi/pages/home/about_page.dart';
+import 'package:kopkarsi/pages/home/biodata_page.dart';
+import 'package:kopkarsi/pages/home/security_page.dart';
+
 // import 'dart:js';
 
 // import 'package:google_fonts/google_fonts.dart';
@@ -23,6 +27,9 @@ class MyApp extends StatelessWidget {
         '/sign-in': (context) => const SignInPage(),
         '/sign-up': (context) => const SignUpPage(),
         '/home': (context) => const MainPage(),
+        '/about-page': (context) => const AboutPage(),
+        '/biodata-page': (context) => const BiodataPage(),
+        '/security-page': (context) => const SecurityPage(),
       },
       // home: SplashPage(),
     );

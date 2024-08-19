@@ -1,6 +1,6 @@
-// import 'package:flutter/widgets.dart';
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -50,16 +50,6 @@ class ProfilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, '/sign-in', (route) => false);
-                  },
-                  child: Image.asset(
-                    'assets/button_exit.png',
-                    width: 20,
-                  ),
-                ),
               ],
             ),
           ),
@@ -99,45 +89,6 @@ class ProfilePage extends StatelessWidget {
       );
     }
 
-    // Widget content() {
-    //   return Expanded(
-    //     child: Container(
-    //       width: double.infinity,
-    //       margin: const EdgeInsets.only(top: 50),
-    //       padding: EdgeInsets.symmetric(
-    //         horizontal: defaultMargin,
-    //       ),
-    //       decoration: BoxDecoration(
-    //         color: backgroundColor,
-    //         borderRadius: BorderRadius.circular(30),
-    //       ),
-    //       child: Column(
-    //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    //         crossAxisAlignment: CrossAxisAlignment.end,
-    //         children: [
-    //           const SizedBox(
-    //             height: 50,
-    //           ),
-    //           Row(
-    //             children: [
-    //               Image.asset(
-    //                 'assets/icon_biodata.png',
-    //                 width: 24,
-    //               ),
-    //               const SizedBox(
-    //                 width: 20,
-    //               ),
-    //               menuItem(
-    //                 'Biodata',
-    //               )
-    //             ],
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    // }
-
     Widget content() {
       return Expanded(
         child: Container(
@@ -156,23 +107,76 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              menuItem(
-                'Biodata',
-                'assets/icon_biodata.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/biodata-page');
+                },
+                child: menuItem(
+                  'Biodata',
+                  'assets/icon_biodata.png',
+                ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              menuItem(
-                'Keamanan',
-                'assets/icon_security.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/security-page');
+                },
+                child: menuItem(
+                  'Keamanan',
+                  'assets/icon_security.png',
+                ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              menuItem(
-                'Tentang',
-                'assets/icon_tentang.png',
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/about-page');
+                },
+                child: menuItem(
+                  'Tentang',
+                  'assets/icon_tentang.png',
+                ),
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Container(
+                height: 50,
+                width: 130,
+                margin: EdgeInsets.only(
+                  top: defaultMargin,
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-in');
+                  },
+                  style: TextButton.styleFrom(
+                    backgroundColor: priceColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.exit_to_app,
+                        color: backgroundColor,
+                      ),
+                      const SizedBox(width: 25),
+                      Text(
+                        'Keluar',
+                        style: backgroundTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: medium,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
