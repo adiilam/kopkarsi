@@ -148,7 +148,7 @@ class _MainPageState extends State<MainPage> {
                                 title: const Text('Simpan'),
                                 onTap: () {
                                   // Action untuk Simpan
-                                  Navigator.pop(context);
+                                  Navigator.pushNamed(context, '/simpan-page');
                                 },
                               ),
                               ListTile(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kopkarsi/pages/home/simpan_page.dart';
 import 'package:kopkarsi/pages/splash_page.dart';
 import 'package:kopkarsi/pages/sign_in_page.dart';
 import 'package:kopkarsi/pages/sign_up_page.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/about-page': (context) => const AboutPage(),
         '/biodata-page': (context) => const BiodataPage(),
         '/security-page': (context) => const SecurityPage(),
+        '/simpan-page': (context) => const SimpanPage(),
       },
       // home: SplashPage(),
     );

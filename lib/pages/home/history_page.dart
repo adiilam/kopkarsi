@@ -172,8 +172,8 @@ class HistoryPage extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(
                       top: 10,
-                      right: 10,
-                      left: 10,
+                      // right: 10,
+                      // left: 10,
                       bottom: defaultMargin,
                     ),
                     child: const SingleChildScrollView(
