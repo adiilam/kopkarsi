@@ -1,11 +1,12 @@
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:kopkarsi/widgets/simpanan_card.dart';
+import 'package:kopkarsi/widgets/pinjaman_card.dart';
+// import 'package:kopkarsi/widgets/simpanan_card.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:flutter/cupertino.dart';
 
-class SimpanPage extends StatelessWidget {
-  const SimpanPage({super.key});
+class PinjamPage extends StatelessWidget {
+  const PinjamPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +104,7 @@ class SimpanPage extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Informasi Simpanan',
+                  'Informasi Pinjaman',
                   style: titleTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: semiBold,
@@ -141,9 +142,9 @@ class SimpanPage extends StatelessWidget {
                           ),
                           const Row(
                             children: [
-                              SimpananCard(),
-                              SimpananCard(),
-                              SimpananCard()
+                              PinjamanCard(),
+                              PinjamanCard(),
+                              PinjamanCard()
                             ],
                           )
                         ],
@@ -162,7 +163,7 @@ class SimpanPage extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Pilih Simpanan',
+                    'Pilih Pinjaman',
                     style: titleTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: semiBold,
@@ -178,21 +179,21 @@ class SimpanPage extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset(
-                    'assets/image_sukarela.png',
+                    'assets/image_umum.png',
                     width: 80,
                   ),
                   const SizedBox(
                     width: 25,
                   ),
                   Image.asset(
-                    'assets/image_berjangka.png',
+                    'assets/image_pendidikan2.png',
                     width: 80,
                   ),
                   const SizedBox(
                     width: 25,
                   ),
                   Image.asset(
-                    'assets/image_pendidikan.png',
+                    'assets/image_berjamin.png',
                     width: 80,
                   ),
                 ],
@@ -205,7 +206,7 @@ class SimpanPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Simpanan\n Sukarela',
+                  'Pinjaman\n Umum',
                   style: priceTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: semiBold,
@@ -215,7 +216,7 @@ class SimpanPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 65),
                 Text(
-                  'Simpanan\n Berjangka',
+                  'Pinjaman \n Pendidikan',
                   style: priceTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: semiBold,
@@ -223,7 +224,7 @@ class SimpanPage extends StatelessWidget {
                 ),
                 const SizedBox(width: 45),
                 Text(
-                  'Simpanan\n Pendidikan',
+                  'Pinjaman \n Berjangka',
                   style: priceTextStyle.copyWith(
                     fontSize: 12,
                     fontWeight: semiBold,

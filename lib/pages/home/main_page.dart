@@ -21,7 +21,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     Widget cartButton() {
       return FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/shop-page');
+        },
         backgroundColor: iconColor,
         child: Image.asset(
           'assets/icon_cart.png',
@@ -156,7 +158,7 @@ class _MainPageState extends State<MainPage> {
                                 title: const Text('Pinjam'),
                                 onTap: () {
                                   // Action untuk Pinjam
-                                  Navigator.pop(context);
+                                  Navigator.pushNamed(context, '/pinjam-page');
                                 },
                               ),
                             ],
