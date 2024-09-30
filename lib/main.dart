@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/security-page': (context) => const SecurityPage(),
         '/simpan-page': (context) => const SimpanPage(),
         '/pinjam-page': (context) => const PinjamPage(),
-        '/shop-page': (context) => const ShopPage(),
+        '/shop-page': (context) => ShopPage(),
       },
       // home: SplashPage(),
     );

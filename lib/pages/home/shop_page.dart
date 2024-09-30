@@ -1,11 +1,37 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:kopkarsi/theme.dart';
 import 'package:flutter/material.dart';
 
-class ShopPage extends StatelessWidget {
-  const ShopPage({super.key});
+class ShopPage extends StatefulWidget {
+  ShopPage({super.key});
+
+  @override
+  State<ShopPage> createState() => _ShopPageState();
+}
+
+class _ShopPageState extends State<ShopPage> {
+  final List images = [
+    'assets/image_shop.png',
+    'assets/image_shop.png',
+    'assets/image_shop.png'
+  ];
+
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    Widget indicator(int index) {
+      return Container(
+        width: currentIndex == index ? 16 : 4,
+        height: 4,
+        margin: const EdgeInsets.symmetric(horizontal: 2),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: currentIndex == index ? primaryColor : const Color(0xffC4C4C4),
+        ),
+      );
+    }
+
     Widget header() {
       return Container(
         padding: const EdgeInsets.all(20),
@@ -89,20 +115,42 @@ class ShopPage extends StatelessWidget {
     }
 
     Widget iklan() {
+      int index = -1;
       return Container(
         margin: const EdgeInsets.only(top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              width: 350,
-              height: 250,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/image_shop.png'),
-                ),
-              ),
+            Container(),
+            CarouselSlider(
+              items: images
+                  .map(
+                    (image) => Image.asset(
+                      image,
+                      width: MediaQuery.of(context).size.width,
+                      height: 240,
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                  .toList(),
+              options: CarouselOptions(
+                  initialPage: 0,
+                  onPageChanged: (index, reason) {
+                    setState(() {
+                      currentIndex = index;
+                    });
+                  }),
             ),
+            SizedBox(
+              height: defaultMargin,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: images.map((e) {
+                index++;
+                return indicator(index);
+              }).toList(),
+            )
           ],
         ),
       );
